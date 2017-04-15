@@ -1,0 +1,25 @@
+Fisierele atasate sunt arhive care contin prezentarile cursului, mai multe exemple, bibliografia,
+documente de prezentare a sistemului de codificare Unicode, cu adresele web unde pot fi gasite astfel de
+informatii, inclusiv un document care contine codurile caracterelor cu diacritice din limba românã.
+
+Cursul se finalizeaza printr-o verificare care consta consta din prezentarea in cadrul laboratorului a unor proiecte pregatite si documentate in prealabil.
+
+In  fisierul proiecte.rtf se prezinta exemple de teme pentru proiecte si explicatii cu privire la realizarea proiectelor. Pentru nota maxima trebuie efectuate cel putin o lucrare 
+din fiecare din categoriile I, III indicate si din catagoria II (Controale) cel putin 2 lucrari.
+
+Acordarea notelor la verificare se va face pe baza cunostintelor dovedite prin explicarea proiectelor.
+
+Un proiect poate fi realizat si de 2 studenti, fiecare dintre autorii proiectului trebuind sa cunoasca si sa poata explica intregul proiect.
+
+Se pot utiliza in elaborarea proiectelor si alte cunostinte decat cele prezentate la curs, daca rezultatul consta in documente HTML dinamice pe partea de client.
+
+Nota pentru laborator se va acorda pe baza activitatii curente si, mai ales, pentru prezentarea pe parcursul elaborarii a proiectelor pentru verificare.
+
+Nota finala va fi media aritmetica (rotunjita) dintre nota de laborator si nota obtinuta pentru prezentarea finala a proiectului, dupa incheierea elaborarii acestuia.
+
+Nota pentru proiect se poate acorda oricand in cursul semestrului, de indata ce proiectul este finalizat si sustinut, dar pentru promovare, conform regulamentului, studentii trebuie sa se prezinte la una din activitatile din ultima saptamana a semestrului (curs sau laborator), in caz contrar fiind declarati absenti, nota fiind acordata, chiar daca a fost obtinua inainte, in sesiunea de restante in care se vor prezenta.
+
+Pot fi contactat la aceasta adresa e-mail (mche78163@yahoo.com) sau la mobil 0723374116.
+
+
+M. Cherciu

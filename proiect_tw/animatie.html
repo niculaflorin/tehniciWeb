@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<style>
+		body{
+			background-color: #000000;
+		}
+		#canvas2{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+
+		#stickman{
+			display: none;
+		}
+
+		#help{
+			display: none;
+			position: absolute;
+			top: 0px;
+			left: 5px;
+		}
+
+		#fireLeft{
+		 	position: absolute;
+		 	left: 0px;
+		 	top:300px;
+		 }
+
+		 #fireRight{
+		 	position: absolute;
+		 	top:300px;
+		 	left: 410px;
+		 }
+		 #canvasCover{
+		 	position: absolute;
+		 	left: 0px;
+		 	top: 300px;
+		 }
+
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="300"></canvas>
+		<canvas id="canvas2" width="500" height="300"></canvas>
+		<img id="stickman" src="img/stickman.png" alt="Stickman">
+		<img id="help" height="30" src="img/help.png" alt="help">
+		<img id="fireRight" height="70" src="img/fireball1.png" alt="fire1">
+		<img id="fireLeft" height="50" src="img/fireball2.png" alt="fireLeft">
+		<canvas id="canvasCover" width="550" height="300"></canvas>
+	</body>
+	<script >
+		var wall = new Image(); //imaginea de background
+		var background = 1; //variabila cu care fac animatia backgroud-ului
+		var stickman = 1; //variabila pentru miscarea pe orizontal a omuletilui
+		var randomVal = 0; //valoare random care hotaraste directia omuletului
+		var position = 350; //pozitia flacatilor
+		var limit = 350; //limita verticala a pozitiei flacarilor
+		var speedLeft = 1000; //viteza animatiei focului
+		var speedRight = 1300; //viteza animatiei focului din dreapta
+
+		$(document).ready(function(){ //JQuery pentru aparitia mesajului help si a flacarilot. Avem eveniment click
+		    $("canvas").click(function(){
+		        $("#help").css('left', stickman).fadeIn("slow");
+		        setInterval(function(){
+		            $("#help").animate({'left': stickman+200}, 10);
+
+		            if(position <= -limit){
+		            	position = limit;
+		            	$("#fireRight").css('top', position);
+		            	$("#fireLeft").css('top', position);
+		            }else{
+		            	position -= limit;	
+		            	$("#fireRight").fadeToggle(300).animate({'top' : position}, speedRight);            	
+		            	$("#fireLeft").fadeToggle(300).animate({'top' : position}, speedLeft);	
+		            }
+		            console.log(position);		            
+		    	});
+		    });		    
+		});
+		
+		function init(){ //initializarea 
+		  wall.src = 'https://i.stack.imgur.com/H9kT6.jpg';
+		  window.requestAnimationFrame(draw);
+		}
+		function drawCover(){ //un dreptunghi ce acopera o parte din animatie pentru a da efectul dorit
+			var ctx = document.getElementById('canvasCover').getContext('2d');
+				ctx.fillRect(0, 0, 550, 200);
+		}
+		function draw2(){ //miscarile stickman-ului
+			var ctx = document.getElementById('canvas2').getContext('2d');			
+			var img = document.getElementById("stickman");
+			var imghelp = document.getElementById("help");
+			var leftBorder = -100;
+			var rightBorder = 100;
+			 ctx.clearRect(0,0,800,900); 
+
+
+    		ctx.drawImage(img, 180, 10);
+    		if(stickman > leftBorder && stickman < rightBorder)
+    		{
+    			randomVal = Math.floor(Math.random() * 5);
+    			if( randomVal %2 == 0){
+    				stickman -= randomVal;
+    				ctx.translate(-randomVal, 0);
+    			}else{
+    				stickman += randomVal;
+    				ctx.translate(randomVal, 0);	
+    			}    				
+    		}else if(stickman <= leftBorder){
+    			randomVal = Math.floor(Math.random() * 5);
+    			ctx.translate(randomVal, 0); 
+    			stickman += randomVal;
+    		}else if(stickman >= rightBorder){
+    			randomVal = Math.floor(Math.random() * 5);
+    			ctx.translate(-randomVal, 0); 
+    			stickman -= randomVal;
+    		}			
+		}
+		function draw() { //animam background-ul si apelam celelate functii de desenare
+		  var ctx = document.getElementById('canvas').getContext('2d');
+		 
+		  
+		  ctx.globalCompositeOperation = 'destination-over';
+		  ctx.clearRect(0,0,800,900); 
+
+
+		  ctx.drawImage(wall,0,0,500,500);
+		  	if(background == 12 ){
+				  	ctx.translate(0, 120);
+					background = 0;
+			}else {
+					ctx.translate(0, -10);
+					background += 1;
+				}
+
+		  	
+			window.requestAnimationFrame(drawCover);
+			window.requestAnimationFrame(draw2);
+			window.requestAnimationFrame(draw);
+		}
+
+		init();
+
+	</script>
+</html

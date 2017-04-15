@@ -1,0 +1,59 @@
+<!DOCtype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/calc_style.css">
+<script src="js/calc_script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<h3 style="float: left; padding-left:430px; color: #ffffff"> Ultima operatie: <span id="mem"></span></h3>
+	</div>
+	<div id="big_wrapper">
+		<div id="form_wrapper">
+			<form id="formone" name="calc">	
+				<input id="display" type="text" name="display" value="0" >
+				<br>
+				<input type="button" class="button opps" value=" exp " onClick="if (checkNum(this.form.display.value)) { exp(this.form) }">
+				<input type="button" class="button number" value="  7  " onClick="addChar(this.form.display, '7')">
+				<input type="button" class="button number" value="  8  " onClick="addChar(this.form.display, '8')">
+				<input type="button" class="button number" value="  9  " onClick="addChar(this.form.display, '9')">
+				<input type="button" class="button opps" value="   /   " onClick="addChar(this.form.display, '/')">
+				<br>
+				<input type="button" class="button opps" value="   log   " onClick="if (checkNum(this.form.display.value)) { log(this.form) }">
+				<input type="button" class="button number" value="  4  " onClick="addChar(this.form.display, '4')">
+				<input type="button" class="button number" value="  5  " onClick="addChar(this.form.display, '5')">
+				<input type="button" class="button number" value="  6  " onClick="addChar(this.form.display, '6')">
+				<input type="button" class="button opps" value="   *   " onClick="addChar(this.form.display, '*')">
+				<br>
+				<input type="button" class="button opps" value=" sqrt " onClick="if (checkNum(this.form.display.value)) { sqrt(this.form) }">
+				<input type="button" class="button number" value="  1  " onClick="addChar(this.form.display, '1')">
+				<input type="button" class="button number" value="  2  " onClick="addChar(this.form.display, '2')">
+				<input type="button" class="button number" value="  3  " onClick="addChar(this.form.display, '3')">
+				<input type="button" class="button opps" value="   -   " onClick="addChar(this.form.display, '-')">
+				<br>
+				<input type="button" class="button opps" value="  x^2 " onClick="if (checkNum(this.form.display.value)) { square(this.form) }">
+				<input type="button" class="button number" value="  0  " onClick="addChar(this.form.display, '0')">
+				<input type="button" class="button opps" value="   .  " onClick="addChar(this.form.display, '.')">
+				<input type="button" class="button opps" value=" +/- " onClick="changeSign(this.form.display)">
+				<input type="button" class="button opps" value="   +  " onClick="addChar(this.form.display, '+')">
+				<br>
+				<input type="button" class="button opps" value="    (    " onClick="addChar(this.form.display, '(')">
+				<input type="button" class="button opps" value="cos" onClick="if (checkNum(this.form.display.value)) { cos(this.form) }">
+				<input type="button" class="button opps" value=" sin" onClick="if (checkNum(this.form.display.value)) { sin(this.form) }">
+				<input type="button" class="button opps" value=" tan" onClick="if (checkNum(this.form.display.value)) { tan(this.form) }">
+				<input type="button" class="button opps" value="   )   " onClick="addChar(this.form.display, ')')">
+				<br>
+				<input type="button" class="button opps" value="pi" onClick="addChar(this.form.display, '3.141')">
+				<input type="button" class="button opps" value="C" onClick="this.form.display.value = 0 ">
+				<input type="button" class="button opps" value="<-" onClick="deleteChar(this.form.display)">
+				<input type="button" class="button opps" value="=" NAME="enter" onClick="if (checkNum(this.form.display.value)) { compute(this.form) }">
+				<input type="button" class="button opps" value="x!" onClick="if (checkNum(this.form.display.value)) { fact(this.form) }">
+			</form>
+		</div>
+	</div>
+	<div class="back">
+		<a href="index.html">Back</a>
+	</div>
+</body>
+</html>
